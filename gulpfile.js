@@ -3,17 +3,21 @@ var sass = require('gulp-sass');
 var htmlmin = require('gulp-htmlmin');
 var del = require('del');
 
-gulp.task("clean", function () {
-    del('./dist')
+gulp.task("clean:css", function () {
+    del('./dist/css')
 });
 
-gulp.task("sass", ["clean"], function () {
+gulp.task("clean:html", function () {
+    del('./dist/*.html')
+});
+
+gulp.task("sass", ["clean:css"], function () {
     return gulp.src("./source/scss/**/*.scss")
         .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
         .pipe(gulp.dest("./dist/css/"));
 });
 
-gulp.task("html", ["clean"], function () {
+gulp.task("html", ["clean:html"], function () {
     return gulp.src("./source/**/*.html")
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(gulp.dest("./dist/"));
