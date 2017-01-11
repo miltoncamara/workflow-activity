@@ -10,7 +10,7 @@ gulp.task("clean", function() {
 });
 
 gulp.task("sass", ["clean"], function() {
-    return gulp.src("./source/scss/*.scss")
+    return gulp.src("./source/scss/**/*.scss")
         .pipe(sass().on('error', sass.logError))
         .pipe(cleanCSS({compatibility: 'ie8'}))
         .pipe(gulp.dest("./dist/css/"));
