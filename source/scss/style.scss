@@ -1,0 +1,50 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+html, body{
+  margin:0 !important;
+  padding:0 !important;
+}
+
+.nav-bar {
+    background-color: $primary-dark;
+    min-height: 40px;
+}
+
+.nav {
+    float: right;
+    margin:0;
+    list-style: none;
+    line-height: 40px;
+    & > li {
+        float:left;
+        padding: 0 10px 0 10px;
+        transition: all 500ms ease;
+        &:hover {
+            background-color: #000;
+        }        
+        &:last-of-type {
+            margin-right:0;
+        }
+        & > a {
+            color:#FFF;
+            font-family: Arial;
+            text-decoration: none;
+            height: 40px;
+        }
+    }
+}
+
+.container {
+    width: 80%;
+    margin:0 auto;
+    .brand {
+        float:left;
+        color:#FFF;
+        font-family: Arial;
+        line-height: 40px;
+        font-weight: bold;
+        font-size: 25px;
+        width: 30%;
+    }
+}
