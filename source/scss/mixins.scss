@@ -1,3 +1,4 @@
-@mixin transition {
-    transition: all 2s ease;
+@mixin nav-bar($height, $bg-color) {
+    background-color: $bg-color;
+    min-height: $height;
 }
